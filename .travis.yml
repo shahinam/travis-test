@@ -30,6 +30,7 @@ install:
 
   # Download & Install Drupal.
   - drush --yes dl drupal-7 --drupal-project-rename=drupal
+  - cd drupal
   - drush --verbose site-install --db-url=mysql://root:@127.0.0.1/drupal --yes
 
 script:
