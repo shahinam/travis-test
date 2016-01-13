@@ -34,4 +34,12 @@ install:
   - drush --verbose site-install --db-url=mysql://root:@127.0.0.1/drupal --yes
 
 script:
+  - drush dl zen
+  - drush en zen -y
+  - drush vset theme_default zen
+  - drush cc drush
+  - drush zen "Zen Test theme" zen_test
+  - drush en zen_test -y
+  - drush vset theme_default zen_test
   - drush status
+
